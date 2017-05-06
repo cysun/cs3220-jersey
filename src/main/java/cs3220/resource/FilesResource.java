@@ -29,7 +29,7 @@ public class FilesResource {
         List<File> files = dbUtils.getFiles();
         dbUtils.close();
 
-        logger.debug( files.size() + " files loaded." );
+        logger.debug( files.size() + " files loaded for the root folder" );
 
         return files;
     }
@@ -43,7 +43,7 @@ public class FilesResource {
         List<File> files = dbUtils.getFiles( id );
         dbUtils.close();
 
-        logger.debug( files.size() + " files loaded." );
+        logger.debug( files.size() + " files loaded for folder " + id );
 
         return files;
     }

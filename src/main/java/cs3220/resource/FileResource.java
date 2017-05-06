@@ -28,7 +28,7 @@ public class FileResource {
         File file = dbUtils.getFile( id );
         dbUtils.close();
 
-        logger.debug( "File: [" + file.getId() + "," + file.getName() + "]" );
+        logger.debug( "File: [" + file.getId() + ", " + file.getName() + "]" );
 
         return file;
     }
@@ -42,7 +42,7 @@ public class FileResource {
         dbUtils.updateFile( file );
         dbUtils.close();
 
-        logger.debug( "File: " + file.getId() + " updated" );
+        logger.debug( "File " + file.getId() + " updated" );
 
         return file;
     }
@@ -54,7 +54,7 @@ public class FileResource {
         dbUtils.deleteFile( id );
         dbUtils.close();
 
-        logger.debug( "File: " + id + " deleted" );
+        logger.debug( "File " + id + " deleted" );
     }
 
 }

@@ -12,11 +12,10 @@
 function expand()
 {
     var li = $(this).parent();
+    $(this).remove(); // remove right away so the user cannot click twice
     $.ajax({
         url: "service/files/" + li.attr("data-id"),
-        context: this,
         success: function(data){
-            $(this).remove();
             var ul = $("<ul></ul>");
             data.forEach(function(file){
                 var newli = $("<li data-id='" + file.id + "'></li>");
