@@ -7,7 +7,7 @@ create table files (
     is_folder   boolean default 0
 );
 
-insert into files values (1, 'Documents and Settings', null, 1);
+insert into files values (1, 'Documents', null, 1);
 insert into files values (2, 'Users', null, 1);
 insert into files values (3, 'John', 2, 1);
 insert into files values (4, 'Jane', 2, 1);

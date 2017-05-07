@@ -14,7 +14,7 @@ import cs3220.model.File;
 
 public class DbUtils {
 
-    String url = "jdbc:mysql://localhost/cysun?useSSL=false";
+    String url = "jdbc:mysql://localhost/jersey?useSSL=false";
 
     String username = "cysun";
 
