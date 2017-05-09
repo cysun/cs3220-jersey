@@ -2,7 +2,6 @@ package cs3220.servlet;
 
 import java.io.IOException;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import cs3220.model.File;
 import cs3220.util.DbUtils;
 
-@WebServlet(urlPatterns = "/file/*", loadOnStartup = 1)
+@WebServlet("/file/*")
 public class FileServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
@@ -20,20 +19,6 @@ public class FileServlet extends HttpServlet {
     public FileServlet()
     {
         super();
-    }
-
-    public void init( ServletConfig config ) throws ServletException
-    {
-        super.init( config );
-
-        try
-        {
-            Class.forName( "com.mysql.jdbc.Driver" );
-        }
-        catch( ClassNotFoundException e )
-        {
-            throw new ServletException( e );
-        }
     }
 
     protected void doGet( HttpServletRequest request,

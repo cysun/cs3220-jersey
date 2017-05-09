@@ -1,6 +1,8 @@
 package cs3220.servlet;
 
 import java.io.IOException;
+
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import cs3220.util.DbUtils;
 
-@WebServlet("/Main")
+@WebServlet(urlPatterns = "/Main", loadOnStartup = 1)
 public class MainServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
@@ -17,6 +19,20 @@ public class MainServlet extends HttpServlet {
     public MainServlet()
     {
         super();
+    }
+
+    public void init( ServletConfig config ) throws ServletException
+    {
+        super.init( config );
+
+        try
+        {
+            Class.forName( "com.mysql.jdbc.Driver" );
+        }
+        catch( ClassNotFoundException e )
+        {
+            throw new ServletException( e );
+        }
     }
 
     protected void doGet( HttpServletRequest request,
